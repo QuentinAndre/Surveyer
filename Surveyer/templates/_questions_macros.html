@@ -1,0 +1,50 @@
+{% macro render_question(q) %}
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title" id={{q.id}}>{{q.text}}</h3>
+            </div>
+            {% if q.kind == "text" %}
+                <div class="panel-body">
+                    {% for line in q.subtext.splitlines() %}
+                        {{line|safe}}<br>
+                    {% endfor %}
+                </div>
+            {% elif q.kind == "s_choice"%}
+                <div class="panel-body">
+                    <div class="row">
+                        {% for c in q.choices %}
+                            <div class="col-xs-1 text-center">
+                                <input name={{q.id}} type="radio" value={{c[0]}}><br>
+                                {% for line in c[1].splitlines() %}
+                                    {{line|safe}}<br>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% elif q.kind == "m_choice"%}
+                <div class="panel-body">
+                    {% for c in q.choices %}
+                        <div class="checkbox">
+                            <label>
+                                <input name="{{q.id}}[]" type="checkbox" value={{c[0]}}>
+                                {{c[1]}}
+                            </label>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% elif q.kind == "s_entry"%}
+                <div class="panel-body">
+                    <input name={{q.id}} type="text" class="form-control" placeholder="Your response here.">
+                </div>
+            {% elif q.kind == "m_entry"%}
+                <div class="panel-body">
+                    <div class="col-xs-6">
+                        <textarea name={{q.id}} rows="4" placeholder="Your response here."></textarea>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}

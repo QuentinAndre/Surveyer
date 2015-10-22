@@ -1,0 +1,5 @@
+Intro,text,"{'text':'Welcome!', 'subtext':'Welcome to the survey. Please pay attention to the following instructions.'}", 0
+Choice1,s_choice,"{'text':'How do you feel right now?', '_choices':{'values':[1, 2, 3, 4, 5], 'labels':['1 \n Bad', '2', '3', '4', '5 \n Good']}}", 1
+Choice2,m_choice,"{'text':'How do you feel right now? Select all the options that apply to your situation.', '_choices':{'values':['Angry', 'Hopeful', 'Negative'], 'labels':['Angry', 'Hopeful', 'Negative']}}", 1
+Choice3,s_entry,"{'text':'What is your name?'}", 1
+Choice4,m_entry,"{'text':'What is your story?'}", 1

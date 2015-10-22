@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+<div id="G_Header" class="page-header">
+  <div class="container">
+    <div class="row">
+      <div id="Difficulty1" class="col-md-6">Reading time: <span id="rtype">Normal</span></div>
+      <div id="Bonus1" class="col-md-6 pull-right text-right">Sentences remaining: <span id="Remain_N">10</span></div>
+    </div>
+    <div class="row">
+      <div id="Difficulty2" class="col-md-6">Word rarity: <span id="wtype">Normal</span></div>
+      <div id="Bonus2" class="col-md-6 pull-right text-right">Current bonus: $<span id="Bonus_N">1.00</span></div>
+    </div>
+  </div>
+</div>
+<div id="G_Sentence">
+	<img src="Sent1.png" id="sentence" style="display: inline-block; opacity: 0;">
+	
+</div>
+<div id="G_MainBlock" class="container">
+	<div id="ErrorText"></div>
+	<div id="G_Feedback">
+		<div id="G_Light" style="opacity:0">
+			<span id="green"></span>
+			<span id="orange"></span>
+			<span id="red"></span>
+		</div>
+	</div>
+	<div id="G_Response" style="opacity:0">
+		<textarea name="input_sent" id="response" style="height:150px;font-size:18px;"></textarea>
+	</div>
+	<div id="G_Timer" style="opacity:0">
+		<div id="countdown"></div>
+	</div>
+</div>
+</body>
+</html>

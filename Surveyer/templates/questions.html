@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% from "_questions_macros.html" import render_question with context %}
+{% block body %}
+    <script src="{{ url_for('bower.static', filename='bootstrap-validator/dist/validator.js') }}"></script>
+    <script>$('signupform').validator()</script>
+    <div class="container">
+        <form data-toggle="validator" role="form" id="questionform" action="" method=post>
+            {% for q in survey_page %}
+                {{ render_question(q) }}
+            {% endfor %}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{
+  "name": "Surveyer",
+  "authors": [
+    "Quentin ANDRE <Quentin.andre@insead.edu>"
+  ],
+  "description": "Javascript dependencies for the Surveyer app",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "Surveyer/bower_components"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap-validator": "~0.9.0"
+  }
+}

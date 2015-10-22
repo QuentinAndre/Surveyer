@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href={{ url_for("static", filename="bootstrap3.css") }}>
+    <script src="{{ url_for('bower.static', filename='jquery/dist/jquery.js') }}"></script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        {% if current_user.is_authenticated %}
+            <p class="navbar-text navbar-left">Currently logged in as: <strong>{{ current_user.nickname }}</strong></p>
+            <form class="navbar-form navbar-right" action="{{ url_for('logout') }}">
+                <button class="btn btn-default" type="submit">Log out</button>
+            </form>
+        {% else %}
+            <p class="navbar-text navbar-left">No user session detected</p>
+            <form class="navbar-form navbar-right" action="{{ url_for('login') }}">
+                <button type="submit" class="btn btn-default navbar-btn">Log in</button>
+            </form>
+            <form class="navbar-form navbar-right" action="{{ url_for('signin') }}">
+                <button type="submit" class="btn btn-default navbar-btn">Sign in</button>
+            </form>
+        {% endif %}
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            {% with messages = get_flashed_messages(with_categories=True) %}
+                {% if messages %}
+                    {% for cat, mess in messages %}
+                        <div class="alert {{ cat }}" role="alert"><strong>{{ mess|safe }}</strong></div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</div>
+{% block body %}
+{% endblock %}
+</body>
+</html>
